@@ -1,0 +1,448 @@
+<%- include('partials/header', { title: 'Dashboard - RepairWidget Admin' }) %>
+<%- include('partials/sidebar', { activePage: 'dashboard' }) %>
+
+<div class="main-content">
+  <%- include('partials/navbar') %>
+
+  <!-- Main Dashboard Body -->
+  <main class="page-body">
+    <!-- Welcome Header & Action Buttons -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+      <div> 
+        <h3 class="fw-bold text-dark mb-1">Dashboard Overview</h3>
+        <p class="text-muted mb-0 small">Welcome back, Alex! Here is your repair shop performance summary.</p>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge bg-white text-secondary border px-3 py-2 rounded-pill small">
+          <i class="bi bi-calendar3 me-1 text-primary"></i> Today: Nov 19, 2026
+        </span>
+        <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+          <i class="bi bi-download me-1"></i> Export Report
+        </button>
+        <button type="button" class="btn btn-primary btn-sm rounded-pill px-3 shadow-sm">
+          <i class="bi bi-plus-lg me-1"></i> New Repair Ticket
+        </button>
+      </div>
+    </div>
+
+    <!-- 4 KPI Metrics Row -->
+    <div class="row g-3 mb-4">
+      <!-- Metric 1: Total Revenue -->
+      <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card card-hover border-0 shadow-sm h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-muted small fw-semibold">Total Revenue</span>
+              <div class="metric-icon-box metric-icon-primary">
+                <i class="bi bi-currency-dollar"></i>
+              </div>
+            </div>
+            <h3 class="fw-bold text-dark mb-1">$48,650.00</h3>
+            <div class="d-flex align-items-center gap-2">
+              <span class="trend-pill trend-up">
+                <i class="bi bi-arrow-up-right"></i> +12.8%
+              </span>
+              <span class="text-muted small">vs last month</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric 2: Active Repair Jobs -->
+      <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card card-hover border-0 shadow-sm h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-muted small fw-semibold">Active Repair Jobs</span>
+              <div class="metric-icon-box metric-icon-info">
+                <i class="bi bi-wrench-adjustable"></i>
+              </div>
+            </div>
+            <h3 class="fw-bold text-dark mb-1">1,342</h3>
+            <div class="d-flex align-items-center gap-2">
+              <span class="trend-pill trend-up">
+                <i class="bi bi-arrow-up-right"></i> +5.4%
+              </span>
+              <span class="text-muted small">28 added today</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric 3: Completed Repairs -->
+      <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card card-hover border-0 shadow-sm h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-muted small fw-semibold">Completed Services</span>
+              <div class="metric-icon-box metric-icon-success">
+                <i class="bi bi-check2-circle"></i>
+              </div>
+            </div>
+            <h3 class="fw-bold text-dark mb-1">4,890</h3>
+            <div class="d-flex align-items-center gap-2">
+              <span class="trend-pill trend-up">
+                <i class="bi bi-arrow-up-right"></i> +18.2%
+              </span>
+              <span class="text-muted small">98.4% success rate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric 4: Pending Inquiries -->
+      <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card card-hover border-0 shadow-sm h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-muted small fw-semibold">Pending Inquiries</span>
+              <div class="metric-icon-box metric-icon-warning">
+                <i class="bi bi-clock-history"></i>
+              </div>
+            </div>
+            <h3 class="fw-bold text-dark mb-1">37</h3>
+            <div class="d-flex align-items-center gap-2">
+              <span class="trend-pill trend-down">
+                <i class="bi bi-arrow-down-right"></i> -2.6%
+              </span>
+              <span class="text-muted small">Avg response: 12 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics & Breakdown Section -->
+    <div class="row g-3 mb-4">
+      <!-- Performance Analytics Chart Box -->
+      <div class="col-12 col-lg-8">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center py-3">
+            <div>
+              <h6 class="mb-0 fw-bold text-dark">Weekly Activity & Repair Volume</h6>
+              <span class="text-muted small">Comparison of incoming vs completed tickets</span>
+            </div>
+            <div class="btn-group btn-group-sm" role="group">
+              <button type="button" class="btn btn-outline-secondary active">Week</button>
+              <button type="button" class="btn btn-outline-secondary">Month</button>
+              <button type="button" class="btn btn-outline-secondary">Year</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <!-- Simulated Visual Chart using Styled Bar Columns -->
+            <div class="d-flex justify-content-between align-items-end pt-4 pb-2 px-2" style="height: 220px;">
+              <div class="text-center d-flex flex-column align-items-center gap-2" style="width: 12%;">
+                <div class="w-100 d-flex justify-content-center align-items-end gap-1" style="height: 160px;">
+                  <div class="bg-primary rounded-top" style="height: 65%; width: 14px;" data-bs-toggle="tooltip" title="Mon Incoming: 38"></div>
+                  <div class="bg-success rounded-top" style="height: 50%; width: 14px;" data-bs-toggle="tooltip" title="Mon Completed: 30"></div>
+                </div>
+                <span class="small text-muted fw-semibold">Mon</span>
+              </div>
+              <div class="text-center d-flex flex-column align-items-center gap-2" style="width: 12%;">
+                <div class="w-100 d-flex justify-content-center align-items-end gap-1" style="height: 160px;">
+                  <div class="bg-primary rounded-top" style="height: 80%; width: 14px;" data-bs-toggle="tooltip" title="Tue Incoming: 48"></div>
+                  <div class="bg-success rounded-top" style="height: 72%; width: 14px;" data-bs-toggle="tooltip" title="Tue Completed: 42"></div>
+                </div>
+                <span class="small text-muted fw-semibold">Tue</span>
+              </div>
+              <div class="text-center d-flex flex-column align-items-center gap-2" style="width: 12%;">
+                <div class="w-100 d-flex justify-content-center align-items-end gap-1" style="height: 160px;">
+                  <div class="bg-primary rounded-top" style="height: 95%; width: 14px;" data-bs-toggle="tooltip" title="Wed Incoming: 62"></div>
+                  <div class="bg-success rounded-top" style="height: 85%; width: 14px;" data-bs-toggle="tooltip" title="Wed Completed: 55"></div>
+                </div>
+                <span class="small text-muted fw-semibold">Wed</span>
+              </div>
+              <div class="text-center d-flex flex-column align-items-center gap-2" style="width: 12%;">
+                <div class="w-100 d-flex justify-content-center align-items-end gap-1" style="height: 160px;">
+                  <div class="bg-primary rounded-top" style="height: 70%; width: 14px;" data-bs-toggle="tooltip" title="Thu Incoming: 44"></div>
+                  <div class="bg-success rounded-top" style="height: 68%; width: 14px;" data-bs-toggle="tooltip" title="Thu Completed: 40"></div>
+                </div>
+                <span class="small text-muted fw-semibold">Thu</span>
+              </div>
+              <div class="text-center d-flex flex-column align-items-center gap-2" style="width: 12%;">
+                <div class="w-100 d-flex justify-content-center align-items-end gap-1" style="height: 160px;">
+                  <div class="bg-primary rounded-top" style="height: 90%; width: 14px;" data-bs-toggle="tooltip" title="Fri Incoming: 58"></div>
+                  <div class="bg-success rounded-top" style="height: 88%; width: 14px;" data-bs-toggle="tooltip" title="Fri Completed: 54"></div>
+                </div>
+                <span class="small text-muted fw-semibold">Fri</span>
+              </div>
+              <div class="text-center d-flex flex-column align-items-center gap-2" style="width: 12%;">
+                <div class="w-100 d-flex justify-content-center align-items-end gap-1" style="height: 160px;">
+                  <div class="bg-primary rounded-top" style="height: 55%; width: 14px;" data-bs-toggle="tooltip" title="Sat Incoming: 32"></div>
+                  <div class="bg-success rounded-top" style="height: 60%; width: 14px;" data-bs-toggle="tooltip" title="Sat Completed: 35"></div>
+                </div>
+                <span class="small text-muted fw-semibold">Sat</span>
+              </div>
+              <div class="text-center d-flex flex-column align-items-center gap-2" style="width: 12%;">
+                <div class="w-100 d-flex justify-content-center align-items-end gap-1" style="height: 160px;">
+                  <div class="bg-primary rounded-top" style="height: 30%; width: 14px;" data-bs-toggle="tooltip" title="Sun Incoming: 18"></div>
+                  <div class="bg-success rounded-top" style="height: 35%; width: 14px;" data-bs-toggle="tooltip" title="Sun Completed: 20"></div>
+                </div>
+                <span class="small text-muted fw-semibold">Sun</span>
+              </div>
+            </div>
+
+            <!-- Legend and Footnotes -->
+            <div class="d-flex justify-content-center gap-4 mt-3 pt-3 border-top">
+              <div class="d-flex align-items-center gap-2 small">
+                <span class="d-inline-block rounded-circle bg-primary" style="width: 10px; height: 10px;"></span>
+                <span class="text-muted">Incoming Tickets (306)</span>
+              </div>
+              <div class="d-flex align-items-center gap-2 small">
+                <span class="d-inline-block rounded-circle bg-success" style="width: 10px; height: 10px;"></span>
+                <span class="text-muted">Repairs Completed (276)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Device Breakdown / Category Stats -->
+      <div class="col-12 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-header bg-white border-bottom py-3">
+            <h6 class="mb-0 fw-bold text-dark">Repairs by Device Category</h6>
+          </div>
+          <div class="card-body">
+            <!-- Item 1 -->
+            <div class="mb-3">
+              <div class="d-flex justify-content-between small fw-semibold mb-1">
+                <span><i class="bi bi-phone me-1 text-primary"></i> Smartphones</span>
+                <span class="text-dark">54% (720 jobs)</span>
+              </div>
+              <div class="progress" style="height: 7px;">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 54%"></div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="mb-3">
+              <div class="d-flex justify-content-between small fw-semibold mb-1">
+                <span><i class="bi bi-laptop me-1 text-info"></i> Laptops & PCs</span>
+                <span class="text-dark">28% (375 jobs)</span>
+              </div>
+              <div class="progress" style="height: 7px;">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 28%"></div>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="mb-3">
+              <div class="d-flex justify-content-between small fw-semibold mb-1">
+                <span><i class="bi bi-tablet me-1 text-warning"></i> Tablets & iPads</span>
+                <span class="text-dark">12% (161 jobs)</span>
+              </div>
+              <div class="progress" style="height: 7px;">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 12%"></div>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between small fw-semibold mb-1">
+                <span><i class="bi bi-smartwatch me-1 text-success"></i> Smartwatches & Audio</span>
+                <span class="text-dark">6% (86 jobs)</span>
+              </div>
+              <div class="progress" style="height: 7px;">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 6%"></div>
+              </div>
+            </div>
+
+            <!-- Quick Info Callout -->
+            <div class="p-3 bg-light rounded-3 border">
+              <div class="d-flex gap-2">
+                <i class="bi bi-lightning-charge-fill text-warning fs-5"></i>
+                <div>
+                  <div class="fw-semibold small text-dark">Turnaround Target</div>
+                  <div class="text-muted small">89% of phone screen repairs are completed under 2 hours.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Repair Orders Table & Activity Feed -->
+    <div class="row g-3">
+      <!-- Recent Repair Orders Table -->
+      <div class="col-12 col-xl-8">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center">
+            <h6 class="mb-0 fw-bold text-dark">Recent Repair Orders</h6>
+            <a href="/tables" class="text-primary text-decoration-none small fw-semibold">View All Orders &rarr;</a>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Ticket</th>
+                  <th>Customer</th>
+                  <th>Device / Issue</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Amount</th>
+                  <th class="text-end">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="fw-semibold text-primary">#TK-4091</span></td>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="rounded-circle bg-primary-subtle text-primary fw-bold d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; font-size: 0.8rem;">
+                        MK
+                      </div>
+                      <div>
+                        <div class="fw-semibold small text-dark">Marcus Kane</div>
+                        <div class="text-muted small" style="font-size: 0.72rem;">marcus@example.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="small fw-semibold text-dark">iPhone 14 Pro Max</div>
+                    <div class="text-muted small" style="font-size: 0.75rem;">OLED Screen Replacement</div>
+                  </td>
+                  <td class="small text-muted">Nov 19, 2026</td>
+                  <td><span class="status-badge status-inprogress">In Progress</span></td>
+                  <td class="fw-semibold text-dark">$229.00</td>
+                  <td class="text-end">
+                    <button class="btn btn-sm btn-light border py-1 px-2" data-bs-toggle="tooltip" title="View details">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><span class="fw-semibold text-primary">#TK-4090</span></td>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="rounded-circle bg-success-subtle text-success fw-bold d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; font-size: 0.8rem;">
+                        EW
+                      </div>
+                      <div>
+                        <div class="fw-semibold small text-dark">Elena Watson</div>
+                        <div class="text-muted small" style="font-size: 0.72rem;">elena.w@gmail.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="small fw-semibold text-dark">MacBook Pro M2</div>
+                    <div class="text-muted small" style="font-size: 0.75rem;">Battery Replacement</div>
+                  </td>
+                  <td class="small text-muted">Nov 19, 2026</td>
+                  <td><span class="status-badge status-completed">Completed</span></td>
+                  <td class="fw-semibold text-dark">$189.00</td>
+                  <td class="text-end">
+                    <button class="btn btn-sm btn-light border py-1 px-2" data-bs-toggle="tooltip" title="View details">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><span class="fw-semibold text-primary">#TK-4089</span></td>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="rounded-circle bg-warning-subtle text-warning fw-bold d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; font-size: 0.8rem;">
+                        DR
+                      </div>
+                      <div>
+                        <div class="fw-semibold small text-dark">David Ross</div>
+                        <div class="text-muted small" style="font-size: 0.72rem;">dross@corp.io</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="small fw-semibold text-dark">Samsung Galaxy S23</div>
+                    <div class="text-muted small" style="font-size: 0.75rem;">Charging Port Repair</div>
+                  </td>
+                  <td class="small text-muted">Nov 18, 2026</td>
+                  <td><span class="status-badge status-pending">Pending Parts</span></td>
+                  <td class="fw-semibold text-dark">$85.00</td>
+                  <td class="text-end">
+                    <button class="btn btn-sm btn-light border py-1 px-2" data-bs-toggle="tooltip" title="View details">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><span class="fw-semibold text-primary">#TK-4088</span></td>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="rounded-circle bg-info-subtle text-info fw-bold d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; font-size: 0.8rem;">
+                        SL
+                      </div>
+                      <div>
+                        <div class="fw-semibold small text-dark">Sophia Lee</div>
+                        <div class="text-muted small" style="font-size: 0.72rem;">sophia.lee@work.net</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="small fw-semibold text-dark">Dell XPS 15</div>
+                    <div class="text-muted small" style="font-size: 0.75rem;">Thermal Paste & Fan Clean</div>
+                  </td>
+                  <td class="small text-muted">Nov 18, 2026</td>
+                  <td><span class="status-badge status-completed">Completed</span></td>
+                  <td class="fw-semibold text-dark">$120.00</td>
+                  <td class="text-end">
+                    <button class="btn btn-sm btn-light border py-1 px-2" data-bs-toggle="tooltip" title="View details">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Activity & Technicians -->
+      <div class="col-12 col-xl-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-header bg-white border-bottom py-3">
+            <h6 class="mb-0 fw-bold text-dark">Recent System Activity</h6>
+          </div>
+          <div class="card-body">
+            <div class="position-relative ps-3 border-start border-2 border-primary-subtle ms-2">
+              <!-- Item 1 -->
+              <div class="mb-3 position-relative">
+                <span class="position-absolute top-0 start-0 translate-middle bg-primary rounded-circle" style="width: 10px; height: 10px; margin-left: -17px;"></span>
+                <div class="fw-semibold small text-dark">Ticket #TK-4091 Assigned</div>
+                <p class="text-muted small mb-0">Assigned to Lead Technician Michael Scott.</p>
+                <small class="text-muted" style="font-size: 0.72rem;">12 mins ago</small>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="mb-3 position-relative">
+                <span class="position-absolute top-0 start-0 translate-middle bg-success rounded-circle" style="width: 10px; height: 10px; margin-left: -17px;"></span>
+                <div class="fw-semibold small text-dark">Payment Received</div>
+                <p class="text-muted small mb-0">$189.00 processed via Stripe for Ticket #TK-4090.</p>
+                <small class="text-muted" style="font-size: 0.72rem;">45 mins ago</small>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="mb-3 position-relative">
+                <span class="position-absolute top-0 start-0 translate-middle bg-warning rounded-circle" style="width: 10px; height: 10px; margin-left: -17px;"></span>
+                <div class="fw-semibold small text-dark">Inventory Warning</div>
+                <p class="text-muted small mb-0">Screen Adhesive Tape stock below reorder threshold.</p>
+                <small class="text-muted" style="font-size: 0.72rem;">2 hours ago</small>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="position-relative">
+                <span class="position-absolute top-0 start-0 translate-middle bg-info rounded-circle" style="width: 10px; height: 10px; margin-left: -17px;"></span>
+                <div class="fw-semibold small text-dark">Customer Review Added</div>
+                <p class="text-muted small mb-0">5-star rating received from Elena Watson.</p>
+                <small class="text-muted" style="font-size: 0.72rem;">3 hours ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<%- include('partials/footer') %>

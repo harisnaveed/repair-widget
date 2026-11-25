@@ -1,0 +1,328 @@
+<%- include('partials/header', { title: 'Modals & Alerts - RepairWidget Admin' }) %>
+<%- include('partials/sidebar', { activePage: 'modals' }) %>
+
+<div class="main-content">
+  <%- include('partials/navbar') %>
+
+  <!-- Modals Page Body -->
+  <main class="page-body">
+    <!-- Page Header -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+      <div>
+        <h3 class="fw-bold text-dark mb-1">Modals & Popups</h3>
+        <p class="text-muted mb-0 small">Interactive dialogs, confirmation prompts, form popups, and notification alerts.</p>
+      </div>
+      <div>
+        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill small">
+          <i class="bi bi-info-circle me-1"></i> Click any trigger button below to test
+        </span>
+      </div>
+    </div>
+
+    <!-- Modals Showcase Cards -->
+    <div class="row g-4 mb-4">
+      <!-- 1. Form Modal Trigger -->
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="card card-hover border-0 shadow-sm h-100">
+          <div class="card-body p-4 text-center d-flex flex-column align-items-center justify-content-between">
+            <div>
+              <div class="metric-icon-box metric-icon-primary mx-auto mb-3">
+                <i class="bi bi-pencil-square"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Form Dialog Modal</h5>
+              <p class="text-muted small mb-4">A standard modal containing form fields, input validation, and submit action.</p>
+            </div>
+            <button type="button" class="btn btn-primary rounded-pill px-4 shadow-sm w-100" data-bs-toggle="modal" data-bs-target="#formModal">
+              <i class="bi bi-plus-circle me-2"></i> Open Form Modal
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Danger / Delete Modal Trigger -->
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="card card-hover border-0 shadow-sm h-100">
+          <div class="card-body p-4 text-center d-flex flex-column align-items-center justify-content-between">
+            <div>
+              <div class="metric-icon-box bg-danger-subtle text-danger mx-auto mb-3">
+                <i class="bi bi-exclamation-triangle"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Delete Confirmation</h5>
+              <p class="text-muted small mb-4">High-impact danger modal prompt with destructive confirmation actions.</p>
+            </div>
+            <button type="button" class="btn btn-outline-danger rounded-pill px-4 w-100" data-bs-toggle="modal" data-bs-target="#deleteModal">
+              <i class="bi bi-trash me-2"></i> Open Delete Modal
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Details Preview Modal Trigger -->
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="card card-hover border-0 shadow-sm h-100">
+          <div class="card-body p-4 text-center d-flex flex-column align-items-center justify-content-between">
+            <div>
+              <div class="metric-icon-box metric-icon-info mx-auto mb-3">
+                <i class="bi bi-person-lines-fill"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Record Details Modal</h5>
+              <p class="text-muted small mb-4">Display comprehensive customer and repair information with badges and tabs.</p>
+            </div>
+            <button type="button" class="btn btn-outline-info rounded-pill px-4 w-100" data-bs-toggle="modal" data-bs-target="#detailsModal">
+              <i class="bi bi-eye me-2"></i> View Details Modal
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Success / Notification Modal Trigger -->
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="card card-hover border-0 shadow-sm h-100">
+          <div class="card-body p-4 text-center d-flex flex-column align-items-center justify-content-between">
+            <div>
+              <div class="metric-icon-box metric-icon-success mx-auto mb-3">
+                <i class="bi bi-check-circle"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Success Confirmation</h5>
+              <p class="text-muted small mb-4">Positive feedback dialog for completed payments, saved settings, or exports.</p>
+            </div>
+            <button type="button" class="btn btn-outline-success rounded-pill px-4 w-100" data-bs-toggle="modal" data-bs-target="#successModal">
+              <i class="bi bi-check-lg me-2"></i> Open Success Modal
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Large / Policy Modal Trigger -->
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="card card-hover border-0 shadow-sm h-100">
+          <div class="card-body p-4 text-center d-flex flex-column align-items-center justify-content-between">
+            <div>
+              <div class="metric-icon-box metric-icon-warning mx-auto mb-3">
+                <i class="bi bi-card-text"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Large Scrollable Modal</h5>
+              <p class="text-muted small mb-4">Full-featured modal with scrollable long content for terms, logs, or agreements.</p>
+            </div>
+            <button type="button" class="btn btn-outline-secondary rounded-pill px-4 w-100" data-bs-toggle="modal" data-bs-target="#largeModal">
+              <i class="bi bi-arrows-fullscreen me-2"></i> Open Large Modal
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       MODAL DEFINITIONS
+       ========================================================================= -->
+
+  <!-- 1. Form Modal -->
+  <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="formModalLabel">
+            <i class="bi bi-plus-circle-fill text-primary me-2"></i>Add Inventory Item
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form>
+            <div class="mb-3">
+              <label class="form-label small fw-semibold text-secondary">Item Name</label>
+              <input type="text" class="form-control" placeholder="e.g. OLED Display Assembly">
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label class="form-label small fw-semibold text-secondary">SKU / Code</label>
+                <input type="text" class="form-control" placeholder="SCR-IPH14P">
+              </div>
+              <div class="col-6">
+                <label class="form-label small fw-semibold text-secondary">Category</label>
+                <select class="form-select">
+                  <option selected>Screens</option>
+                  <option value="1">Batteries</option>
+                  <option value="2">Charging Ports</option>
+                  <option value="3">Tooling</option>
+                </select>
+              </div>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label class="form-label small fw-semibold text-secondary">Unit Price ($)</label>
+                <input type="number" step="0.01" class="form-control" placeholder="89.99">
+              </div>
+              <div class="col-6">
+                <label class="form-label small fw-semibold text-secondary">Stock Quantity</label>
+                <input type="number" class="form-control" placeholder="25">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-semibold text-secondary">Supplier Notes</label>
+              <textarea class="form-control" rows="2" placeholder="OEM grade component with manufacturer warranty."></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer border-top-0 pt-0">
+          <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary shadow-sm" data-bs-dismiss="modal">Save Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Danger / Delete Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" style="max-width: 400px;">
+      <div class="modal-content border-0 shadow-lg text-center p-4">
+        <div class="rounded-circle bg-danger-subtle text-danger mx-auto d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 1.8rem;">
+          <i class="bi bi-trash-fill"></i>
+        </div>
+        <h5 class="fw-bold text-dark mb-2">Delete this record?</h5>
+        <p class="text-muted small mb-4">
+          Are you sure you want to delete <strong>#ORD-9821</strong>? This action is permanent and cannot be undone.
+        </p>
+        <div class="d-flex justify-content-center gap-2">
+          <button type="button" class="btn btn-light border px-4" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger px-4 shadow-sm" data-bs-dismiss="modal">Yes, Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Record Details Modal -->
+  <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header bg-light">
+          <div>
+            <h5 class="modal-title fw-bold" id="detailsModalLabel">Ticket Details #TK-4091</h5>
+            <span class="status-badge status-inprogress">In Progress</span>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="row g-4">
+            <!-- Customer Summary -->
+            <div class="col-12 col-md-6 border-end-md">
+              <h6 class="fw-bold small text-muted text-uppercase mb-3">Customer Information</h6>
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&h=100&q=80" alt="Customer" class="avatar-img" style="width: 50px; height: 50px;">
+                <div>
+                  <h6 class="mb-0 fw-bold">Marcus Kane</h6>
+                  <p class="text-muted small mb-0">marcus@example.com</p>
+                  <p class="text-muted small mb-0">+1 (555) 234-8971</p>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush small">
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                  <span class="text-muted">Customer Since</span>
+                  <span class="fw-semibold">March 2024</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                  <span class="text-muted">Total Repairs</span>
+                  <span class="fw-semibold">4 Devices</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Device Summary -->
+            <div class="col-12 col-md-6">
+              <h6 class="fw-bold small text-muted text-uppercase mb-3">Service Details</h6>
+              <ul class="list-group list-group-flush small">
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                  <span class="text-muted">Device</span>
+                  <span class="fw-semibold">iPhone 14 Pro Max (256GB)</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                  <span class="text-muted">Issue</span>
+                  <span class="fw-semibold">Cracked OLED + Digitizer</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                  <span class="text-muted">Assigned Tech</span>
+                  <span class="fw-semibold text-primary">Michael Scott</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                  <span class="text-muted">Estimated Total</span>
+                  <span class="fw-bold text-dark fs-6">$229.00</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary btn-sm" onclick="window.print()">
+            <i class="bi bi-printer me-1"></i> Print Invoice
+          </button>
+          <button type="button" class="btn btn-primary btn-sm px-4" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" style="max-width: 380px;">
+      <div class="modal-content border-0 shadow-lg text-center p-4">
+        <div class="rounded-circle bg-success-subtle text-success mx-auto d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 2rem;">
+          <i class="bi bi-check2"></i>
+        </div>
+        <h5 class="fw-bold text-dark mb-1">Payment Successful!</h5>
+        <p class="text-muted small mb-3">
+          Invoice <strong>#INV-2026-994</strong> has been paid in full via Stripe.
+        </p>
+        <div class="p-3 bg-light rounded text-start small mb-4">
+          <div class="d-flex justify-content-between mb-1">
+            <span class="text-muted">Transaction ID:</span>
+            <span class="fw-bold font-monospace">TXN_998342</span>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span class="text-muted">Amount Paid:</span>
+            <span class="fw-bold text-success">$229.00 USD</span>
+          </div>
+        </div>
+        <button type="button" class="btn btn-success rounded-pill px-4 shadow-sm w-100" data-bs-dismiss="modal">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Large Scrollable Terms Modal -->
+  <div class="modal fade" id="largeModal" tabindex="-1" aria-labelledby="largeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="largeModalLabel">
+            <i class="bi bi-file-text me-2 text-primary"></i>Service Warranty & Terms Policy
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 small text-muted">
+          <h6 class="fw-bold text-dark">1. Standard Warranty Coverage</h6>
+          <p>
+            All hardware replacements performed at RepairWidget include a 90-day parts and labor guarantee. If the replaced component exhibits manufacturing defects or fails under normal operational usage, it will be serviced at zero additional cost.
+          </p>
+          <h6 class="fw-bold text-dark">2. Exclusions to Warranty</h6>
+          <p>
+            Warranty is immediately voided in cases of subsequent liquid contact, physical drops resulting in external frame or glass cracks, unauthorized third-party disassembly, or software jailbreaking/rooting.
+          </p>
+          <h6 class="fw-bold text-dark">3. Data & Privacy Responsibilities</h6>
+          <p>
+            Customers are advised to create a full system backup prior to handing over any personal device. While our technicians prioritize data preservation, RepairWidget does not accept liability for software corruption or accidental data loss during motherboard rework.
+          </p>
+          <h6 class="fw-bold text-dark">4. Unclaimed Device Policy</h6>
+          <p>
+            Devices remaining uncollected for more than 45 calendar days post completion notice will be subject to storage fees of $5.00/day. After 90 days, devices may be recycled or liquidated in accordance with state regulations.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I Accept Terms</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%- include('partials/footer') %>

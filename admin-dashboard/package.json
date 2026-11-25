@@ -1,0 +1,29 @@
+{
+  "name": "admin-dashboard-repair-widget",
+  "version": "1.0.0",
+  "description": "Admin dashboard and backend API for repair widget",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed:devices": "node src/seeders/deviceSeeder.js",
+    "seed:brands": "node src/seeders/brandSeeder.js",
+    "seed:device-brands": "node src/seeders/deviceBrandSeeder.js",
+    "seed:all": "node src/seeders/deviceSeeder.js && node src/seeders/brandSeeder.js && node src/seeders/deviceBrandSeeder.js",
+    "seed": "npm run seed:all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "ejs": "^7.0.2",
+    "express": "^5.3.0",
+    "mongoose": "^9.11.4",
+    "nodemon": "^3.1.14",
+    "slugify": "^1.6.9"
+  }
+}

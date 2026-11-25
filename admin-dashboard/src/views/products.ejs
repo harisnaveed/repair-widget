@@ -1,0 +1,234 @@
+<%- include('partials/header', { title: 'Product Cards & Inventory - RepairWidget Admin' }) %>
+<%- include('partials/sidebar', { activePage: 'products' }) %>
+
+<div class="main-content">
+  <%- include('partials/navbar') %>
+
+  <!-- Products Page Body -->
+  <main class="page-body">
+    <!-- Page Header -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+      <div>
+        <h3 class="fw-bold text-dark mb-1">Product & Inventory Cards</h3>
+        <p class="text-muted mb-0 small">Explore hardware replacement parts, repair kits, tools, and accessories.</p>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+          <i class="bi bi-arrow-clockwise me-1"></i> Sync Stock
+        </button>
+        <button type="button" class="btn btn-primary btn-sm rounded-pill px-3 shadow-sm">
+          <i class="bi bi-plus-lg me-1"></i> Add New Product
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Filters & Toolbar -->
+    <div class="card border-0 shadow-sm mb-4">
+      <div class="card-body p-3">
+        <div class="row g-3 align-items-center justify-content-between">
+          <!-- Filter Badges / Tabs -->
+          <div class="col-12 col-lg-8">
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-primary btn-sm rounded-pill px-3">All Items (48)</button>
+              <button class="btn btn-light btn-sm rounded-pill px-3 border">Screens & Displays</button>
+              <button class="btn btn-light btn-sm rounded-pill px-3 border">Batteries</button>
+              <button class="btn btn-light btn-sm rounded-pill px-3 border">Motherboards</button>
+              <button class="btn btn-light btn-sm rounded-pill px-3 border">Repair Tools</button>
+            </div>
+          </div>
+          <!-- Sort & Search -->
+          <div class="col-12 col-lg-4 d-flex gap-2">
+            <input type="text" class="form-control form-control-sm" placeholder="Search parts...">
+            <select class="form-select form-select-sm" style="max-width: 150px;">
+              <option selected>Featured</option>
+              <option value="1">Price: Low to High</option>
+              <option value="2">Price: High to Low</option>
+              <option value="3">Top Rated</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 mb-4">
+      <!-- Product 1 -->
+      <div class="col">
+        <div class="card product-card border-0 shadow-sm h-100">
+          <div class="product-img-wrapper">
+            <span class="product-badge bg-primary text-white">Best Seller</span>
+            <button class="wishlist-btn" title="Add to Wishlist"><i class="bi bi-heart"></i></button>
+            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80" alt="iPhone 14 Pro OLED Display">
+          </div>
+          <div class="card-body p-3 d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-light text-muted border mb-2" style="font-size: 0.72rem;">Screens</span>
+              <h6 class="fw-bold text-dark mb-1 text-truncate">iPhone 14 Pro OLED Display</h6>
+              <p class="text-muted small mb-2 text-truncate">Super Retina XDR original grade with digitizer frame.</p>
+              
+              <!-- Ratings -->
+              <div class="d-flex align-items-center gap-1 mb-2">
+                <div class="text-warning small">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+                <span class="text-muted small" style="font-size: 0.75rem;">(4.8 • 124)</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="d-flex align-items-baseline gap-2 mb-3">
+                <span class="fs-5 fw-bold text-dark">$189.99</span>
+                <span class="text-muted text-decoration-line-through small">$219.00</span>
+                <span class="badge bg-success-subtle text-success small ms-auto">In Stock (18)</span>
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-outline-primary btn-sm rounded-pill"><i class="bi bi-cart-plus me-1"></i> Add to Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col">
+        <div class="card product-card border-0 shadow-sm h-100">
+          <div class="product-img-wrapper">
+            <span class="product-badge bg-danger text-white">Sale -20%</span>
+            <button class="wishlist-btn" title="Add to Wishlist"><i class="bi bi-heart-fill text-danger"></i></button>
+            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80" alt="MacBook Pro Battery">
+          </div>
+          <div class="card-body p-3 d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-light text-muted border mb-2" style="font-size: 0.72rem;">Batteries</span>
+              <h6 class="fw-bold text-dark mb-1 text-truncate">MacBook Pro 16" Battery Cell</h6>
+              <p class="text-muted small mb-2 text-truncate">99.6Wh lithium polymer high-capacity replacement.</p>
+              
+              <!-- Ratings -->
+              <div class="d-flex align-items-center gap-1 mb-2">
+                <div class="text-warning small">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="text-muted small" style="font-size: 0.75rem;">(5.0 • 86)</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="d-flex align-items-baseline gap-2 mb-3">
+                <span class="fs-5 fw-bold text-dark">$79.99</span>
+                <span class="text-muted text-decoration-line-through small">$99.99</span>
+                <span class="badge bg-success-subtle text-success small ms-auto">In Stock (8)</span>
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-outline-primary btn-sm rounded-pill"><i class="bi bi-cart-plus me-1"></i> Add to Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col">
+        <div class="card product-card border-0 shadow-sm h-100">
+          <div class="product-img-wrapper">
+            <span class="product-badge bg-info text-dark">Pro Tool</span>
+            <button class="wishlist-btn" title="Add to Wishlist"><i class="bi bi-heart"></i></button>
+            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Precision Screwdriver Set">
+          </div>
+          <div class="card-body p-3 d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-light text-muted border mb-2" style="font-size: 0.72rem;">Tools</span>
+              <h6 class="fw-bold text-dark mb-1 text-truncate">Precision Magnetic Tool Kit</h6>
+              <p class="text-muted small mb-2 text-truncate">64-bit high-grade steel kit for electronics repair.</p>
+              
+              <!-- Ratings -->
+              <div class="d-flex align-items-center gap-1 mb-2">
+                <div class="text-warning small">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+                <span class="text-muted small" style="font-size: 0.75rem;">(4.2 • 210)</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="d-flex align-items-baseline gap-2 mb-3">
+                <span class="fs-5 fw-bold text-dark">$34.50</span>
+                <span class="text-muted text-decoration-line-through small">$42.00</span>
+                <span class="badge bg-success-subtle text-success small ms-auto">In Stock (32)</span>
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-outline-primary btn-sm rounded-pill"><i class="bi bi-cart-plus me-1"></i> Add to Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col">
+        <div class="card product-card border-0 shadow-sm h-100">
+          <div class="product-img-wrapper">
+            <span class="product-badge bg-secondary text-white">Out of Stock</span>
+            <button class="wishlist-btn" title="Add to Wishlist"><i class="bi bi-heart"></i></button>
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80" alt="Samsung Galaxy S23 Motherboard">
+          </div>
+          <div class="card-body p-3 d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-light text-muted border mb-2" style="font-size: 0.72rem;">Boards</span>
+              <h6 class="fw-bold text-dark mb-1 text-truncate">Galaxy S23 Main Logic Board</h6>
+              <p class="text-muted small mb-2 text-truncate">Snapdragon 8 Gen 2 unlocked 256GB motherboard.</p>
+              
+              <!-- Ratings -->
+              <div class="d-flex align-items-center gap-1 mb-2">
+                <div class="text-warning small">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="text-muted small" style="font-size: 0.75rem;">(4.9 • 43)</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="d-flex align-items-baseline gap-2 mb-3">
+                <span class="fs-5 fw-bold text-dark">$280.00</span>
+                <span class="badge bg-danger-subtle text-danger small ms-auto">Backorder</span>
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-secondary btn-sm rounded-pill disabled"><i class="bi bi-bell me-1"></i> Notify Restock</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 pt-2">
+      <span class="small text-muted">Showing <strong>4</strong> of <strong>48</strong> products</span>
+      <nav aria-label="Page navigation">
+        <ul class="pagination pagination-sm mb-0">
+          <li class="page-item disabled"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+/* "important" makes Tailwind utilities win over any leftover Vite template CSS */
+@import "tailwindcss" important;
+
+/* ---------- Design tokens (Tailwind v4 @theme) ---------- */
+@theme {
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-brand-50: #f3f7ff;
+  --color-brand-100: #dbe7ff;
+  --color-brand-200: #93b4f5;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+
+  --color-secondary-50: #f8fafc;
+  --color-secondary-100: #e2e8f0;
+  --color-secondary-200: #cbd5e1;
+  --color-secondary-600: #475569;
+  --color-secondary-700: #334155;
+
+  --color-ink: #0f172a;
+  --color-muted: #526077;
+  --color-line: #e3e8f0;
+  --color-line-strong: #d5dce8;
+  --color-surface: #f3f5f9;
+
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.04);
+  --shadow-card-selected: 0 6px 18px rgb(37 99 235 / 0.14);
+  --shadow-cta: 0 8px 20px rgb(37 99 235 / 0.28);
+}
+
+/* ---------- Page reset: full width, light theme, left aligned ----------
+   Unlayered on purpose, so it also overrides the default Vite template
+   styles (#root { max-width: 1280px; text-align: center; padding: 2rem }
+   and body { display: flex; place-items: center }). */
+:root {
+  color-scheme: light;
+  color: var(--color-ink);
+  background-color: var(--color-surface);
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  display: block;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-brand-600);
+  outline-offset: 2px;
+}
+
+/* ---------- Components ----------
+   Not wrapped in @layer, so a class beats any element selector
+   such as the Vite template's  button { ... }  rules. */
+
+/* Header progress steps */
+.step-dot {
+  @apply flex h-7 w-7 flex-none items-center justify-center rounded-full bg-slate-200 text-[13px] font-semibold text-muted;
+}
+.step-dot[data-state="done"] {
+  @apply bg-brand-600 text-white;
+}
+.step-dot[data-state="current"] {
+  @apply border-2 border-brand-600 bg-white font-bold text-brand-600;
+  box-shadow: 0 0 0 4px var(--color-brand-100);
+}
+
+/* Labels are hidden on small screens (except the current step) so no scrollbar is needed */
+.step-label {
+  @apply hidden text-sm font-medium text-muted md:inline;
+}
+.step-label[data-state="done"] {
+  @apply font-semibold text-ink;
+}
+.step-label[data-state="current"] {
+  @apply inline font-bold text-brand-600;
+}
+
+.step-line {
+  @apply h-0.5 w-4 flex-none bg-line-strong md:w-9;
+}
+.step-line[data-state="done"] {
+  @apply bg-brand-600;
+}
+
+/* Search */
+.search-box {
+  @apply flex h-12 w-full flex-none items-center gap-2.5 rounded-xl sm:w-auto sm:flex-1 border-[1.5px] border-line bg-white px-4;
+}
+.search-box:focus-within {
+  @apply border-brand-600;
+  box-shadow: 0 0 0 3px var(--color-brand-100);
+}
+
+/* Model cards */
+.model-card {
+  @apply relative flex flex-col items-center gap-1 rounded-2xl border-[1.5px] border-solid border-line bg-white px-3 pt-[18px] pb-4 text-ink shadow-card;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+.model-card:hover {
+  @apply border-brand-200;
+}
+.model-card[aria-pressed="true"] {
+  @apply border-2 border-brand-600 bg-brand-50 shadow-card-selected;
+}
+
+/* Cart panel */
+.cart-row {
+  @apply flex items-center gap-3 border-b border-line py-3;
+}
+.cart-icon {
+  @apply flex h-10 w-10 flex-none items-center justify-center rounded-[10px] bg-brand-50 text-brand-600;
+}
+.cart-remove {
+  @apply ml-auto flex h-8 w-8 items-center justify-center rounded-lg border-0 bg-transparent p-0 text-muted;
+}
+.cart-remove:hover {
+  @apply bg-surface;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply flex h-[52px] w-full items-center justify-center gap-2 rounded-xl border-0 bg-brand-600 p-0 text-base font-semibold text-white shadow-cta;
+  transition: background-color 0.15s ease;
+}
+.btn-primary:hover:not(:disabled) {
+  @apply bg-brand-700;
+}
+.btn-primary:disabled {
+  @apply bg-slate-300 shadow-none;
+}
+
+.btn-secondary {
+  @apply flex h-[52px] w-full items-center justify-center gap-2 rounded-xl border-0 bg-secondary-600 p-0 text-base font-semibold text-white shadow-cta;
+  transition: background-color 0.15s ease;
+}
+.btn-secondary:hover {
+  @apply bg-secondary-700;
+}

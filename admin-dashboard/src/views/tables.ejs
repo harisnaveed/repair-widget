@@ -1,0 +1,252 @@
+<%- include('partials/header', { title: 'Data Tables - RepairWidget Admin' }) %>
+<%- include('partials/sidebar', { activePage: 'tables' }) %>
+
+<div class="main-content">
+  <%- include('partials/navbar') %>
+
+  <!-- Tables Page Body -->
+  <main class="page-body">
+    <!-- Page Header -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+      <div>
+        <h3 class="fw-bold text-dark mb-1">Data Tables</h3>
+        <p class="text-muted mb-0 small">Manage repairs, customer orders, and status records with filtering and pagination.</p>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+          <i class="bi bi-filter me-1"></i> Filter
+        </button>
+        <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+          <i class="bi bi-file-earmark-arrow-down me-1"></i> Export CSV
+        </button>
+        <button type="button" class="btn btn-primary btn-sm rounded-pill px-3 shadow-sm">
+          <i class="bi bi-plus-lg me-1"></i> Add Record
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Table Card -->
+    <div class="card border-0 shadow-sm mb-4">
+      <div class="card-header bg-white border-bottom py-3">
+        <div class="row g-2 align-items-center justify-content-between w-100">
+          <div class="col-12 col-md-4">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text bg-light border-end-0 text-muted"><i class="bi bi-search"></i></span>
+              <input type="text" class="form-control bg-light border-start-0" placeholder="Filter by customer or ticket...">
+            </div>
+          </div>
+          <div class="col-12 col-md-6 d-flex justify-content-md-end gap-2">
+            <select class="form-select form-select-sm" style="max-width: 150px;">
+              <option selected>All Statuses</option>
+              <option value="1">Completed</option>
+              <option value="2">In Progress</option>
+              <option value="3">Pending</option>
+              <option value="4">Cancelled</option>
+            </select>
+            <select class="form-select form-select-sm" style="max-width: 150px;">
+              <option selected>Priority</option>
+              <option value="1">High</option>
+              <option value="2">Medium</option>
+              <option value="3">Low</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Responsive Table -->
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead>
+            <tr>
+              <th style="width: 40px;">
+                <input class="form-check-input" type="checkbox" value="" id="selectAll">
+              </th>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Device & Service</th>
+              <th>Assigned Technician</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Cost</th>
+              <th class="text-end">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input class="form-check-input" type="checkbox"></td>
+              <td><span class="fw-bold text-primary">#ORD-9821</span></td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=80&h=80&q=80" alt="Avatar" class="avatar-img" style="width: 32px; height: 32px;">
+                  <div>
+                    <div class="fw-semibold small text-dark">James Wilson</div>
+                    <div class="text-muted small" style="font-size: 0.72rem;">james.w@gmail.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="small fw-semibold text-dark">iPhone 13 Pro</div>
+                <div class="text-muted small" style="font-size: 0.72rem;">OLED Display Glass + Frame</div>
+              </td>
+              <td>
+                <span class="small text-muted"><i class="bi bi-person-badge me-1"></i> Tyler Vance</span>
+              </td>
+              <td><span class="badge bg-danger-subtle text-danger border border-danger-subtle">High</span></td>
+              <td><span class="status-badge status-inprogress">In Progress</span></td>
+              <td class="fw-semibold text-dark">$199.00</td>
+              <td class="text-end">
+                <div class="btn-group btn-group-sm">
+                  <button class="btn btn-light border py-1 px-2" title="View"><i class="bi bi-eye"></i></button>
+                  <button class="btn btn-light border py-1 px-2" title="Edit"><i class="bi bi-pencil"></i></button>
+                  <button class="btn btn-light border py-1 px-2 text-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><input class="form-check-input" type="checkbox"></td>
+              <td><span class="fw-bold text-primary">#ORD-9820</span></td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&h=80&q=80" alt="Avatar" class="avatar-img" style="width: 32px; height: 32px;">
+                  <div>
+                    <div class="fw-semibold small text-dark">Claire Dupont</div>
+                    <div class="text-muted small" style="font-size: 0.72rem;">c.dupont@outlook.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="small fw-semibold text-dark">MacBook Air M1</div>
+                <div class="text-muted small" style="font-size: 0.72rem;">Trackpad & Keyboard Replacement</div>
+              </td>
+              <td>
+                <span class="small text-muted"><i class="bi bi-person-badge me-1"></i> Leo Chen</span>
+              </td>
+              <td><span class="badge bg-warning-subtle text-warning border border-warning-subtle">Medium</span></td>
+              <td><span class="status-badge status-completed">Completed</span></td>
+              <td class="fw-semibold text-dark">$245.00</td>
+              <td class="text-end">
+                <div class="btn-group btn-group-sm">
+                  <button class="btn btn-light border py-1 px-2" title="View"><i class="bi bi-eye"></i></button>
+                  <button class="btn btn-light border py-1 px-2" title="Edit"><i class="bi bi-pencil"></i></button>
+                  <button class="btn btn-light border py-1 px-2 text-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><input class="form-check-input" type="checkbox"></td>
+              <td><span class="fw-bold text-primary">#ORD-9819</span></td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="rounded-circle bg-secondary-subtle text-secondary fw-bold d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; font-size: 0.8rem;">
+                    RH
+                  </div>
+                  <div>
+                    <div class="fw-semibold small text-dark">Robert Hayes</div>
+                    <div class="text-muted small" style="font-size: 0.72rem;">rhayes@techcorp.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="small fw-semibold text-dark">PlayStation 5</div>
+                <div class="text-muted small" style="font-size: 0.72rem;">HDMI Port Soldering</div>
+              </td>
+              <td>
+                <span class="small text-muted"><i class="bi bi-person-badge me-1"></i> Tyler Vance</span>
+              </td>
+              <td><span class="badge bg-info-subtle text-info border border-info-subtle">Normal</span></td>
+              <td><span class="status-badge status-pending">Pending Parts</span></td>
+              <td class="fw-semibold text-dark">$110.00</td>
+              <td class="text-end">
+                <div class="btn-group btn-group-sm">
+                  <button class="btn btn-light border py-1 px-2" title="View"><i class="bi bi-eye"></i></button>
+                  <button class="btn btn-light border py-1 px-2" title="Edit"><i class="bi bi-pencil"></i></button>
+                  <button class="btn btn-light border py-1 px-2 text-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><input class="form-check-input" type="checkbox"></td>
+              <td><span class="fw-bold text-primary">#ORD-9818</span></td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=80&h=80&q=80" alt="Avatar" class="avatar-img" style="width: 32px; height: 32px;">
+                  <div>
+                    <div class="fw-semibold small text-dark">Lucas Silva</div>
+                    <div class="text-muted small" style="font-size: 0.72rem;">lsilva@brazil.io</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="small fw-semibold text-dark">Google Pixel 7</div>
+                <div class="text-muted small" style="font-size: 0.72rem;">Battery Drain Diagnostic</div>
+              </td>
+              <td>
+                <span class="small text-muted"><i class="bi bi-person-badge me-1"></i> Maya Patel</span>
+              </td>
+              <td><span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Low</span></td>
+              <td><span class="status-badge status-completed">Completed</span></td>
+              <td class="fw-semibold text-dark">$65.00</td>
+              <td class="text-end">
+                <div class="btn-group btn-group-sm">
+                  <button class="btn btn-light border py-1 px-2" title="View"><i class="bi bi-eye"></i></button>
+                  <button class="btn btn-light border py-1 px-2" title="Edit"><i class="bi bi-pencil"></i></button>
+                  <button class="btn btn-light border py-1 px-2 text-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><input class="form-check-input" type="checkbox"></td>
+              <td><span class="fw-bold text-primary">#ORD-9817</span></td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&h=80&q=80" alt="Avatar" class="avatar-img" style="width: 32px; height: 32px;">
+                  <div>
+                    <div class="fw-semibold small text-dark">Amanda Bailey</div>
+                    <div class="text-muted small" style="font-size: 0.72rem;">abailey@domain.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="small fw-semibold text-dark">iPad Air 5th Gen</div>
+                <div class="text-muted small" style="font-size: 0.72rem;">Liquid Damage Recovery</div>
+              </td>
+              <td>
+                <span class="small text-muted"><i class="bi bi-person-badge me-1"></i> Leo Chen</span>
+              </td>
+              <td><span class="badge bg-danger-subtle text-danger border border-danger-subtle">High</span></td>
+              <td><span class="status-badge status-cancelled">Cancelled</span></td>
+              <td class="fw-semibold text-dark">$0.00</td>
+              <td class="text-end">
+                <div class="btn-group btn-group-sm">
+                  <button class="btn btn-light border py-1 px-2" title="View"><i class="bi bi-eye"></i></button>
+                  <button class="btn btn-light border py-1 px-2" title="Edit"><i class="bi bi-pencil"></i></button>
+                  <button class="btn btn-light border py-1 px-2 text-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination Footer -->
+      <div class="card-footer bg-white border-top py-3 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+        <span class="small text-muted">Showing <strong>1 to 5</strong> of <strong>48</strong> entries</span>
+        <nav aria-label="Page navigation">
+          <ul class="pagination pagination-sm mb-0">
+            <li class="page-item disabled"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </main>
+
+<%- include('partials/footer') %>
